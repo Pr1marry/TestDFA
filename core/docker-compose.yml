@@ -13,7 +13,7 @@ services:
     volumes:
       - ./data/db:/var/lib/postgresql/data
   migration:
-    build: .
+    build: ..
     command: python manage.py migrate
     volumes:
       - .:/code
@@ -23,7 +23,7 @@ services:
       - db
   web:
     container_name: Api
-    build: .
+    build: ..
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
       - .:/code
